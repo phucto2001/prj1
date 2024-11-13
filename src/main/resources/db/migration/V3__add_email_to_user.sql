@@ -1,0 +1,3 @@
+ALTER TABLE user
+    ADD COLUMN email VARCHAR(100) NOT NULL,
+    ADD CONSTRAINT uk_user_email UNIQUE (email);

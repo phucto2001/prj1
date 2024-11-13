@@ -19,12 +19,14 @@ public class UserDto implements Serializable {
     private final UUID id;
     private final String username;
     private final String displayName;
+    private final String email;
 
     public static UserDto fromEntity(User user) {
         return new UserDto(
                 user.getId(),
                 user.getUsername(),
-                user.getDisplayName()
+                user.getDisplayName(),
+                user.getEmail()
         );
     }
 
@@ -33,4 +35,6 @@ public class UserDto implements Serializable {
                 .map(UserDto::fromEntity)
                 .collect(Collectors.toList());
     }
+
+
 }
